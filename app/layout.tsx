@@ -16,13 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="app">
-        <Provider>
-          <Header />
-          <Intro />
-          <Recomended />
-          {children}
-          <Form withKitchen visible={false} />
-        </Provider>
+        <Header />
+        <Intro />
+        <Recomended />
+        {children}
       </body>
     </html>
   );
