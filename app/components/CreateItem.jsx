@@ -13,6 +13,7 @@ const CreateItem = () => {
   const [facades, setFacades] = useState('');
   const [blat, setBlat] = useState('');
   const [producer, setProducer] = useState('');
+  const [description, setDescription] = useState(''); // New state for description
   const [files, setFiles] = useState([]);
 
   const handleChangeFile = (event) => {
@@ -43,10 +44,11 @@ const CreateItem = () => {
         facades: facades || null,
         blat: blat || null,
         producer: producer || null,
+        description: description || null, // Add description to the data
         createdAt: new Date(),
       });
 
-      // Сброс формы
+      // Reset form
       setTitle('');
       setPrice('');
       setLength('');
@@ -55,6 +57,7 @@ const CreateItem = () => {
       setFacades('');
       setBlat('');
       setProducer('');
+      setDescription(''); // Reset description
       setFiles([]);
       alert('Объект успешно добавлен!');
     } catch (error) {
@@ -138,9 +141,17 @@ const CreateItem = () => {
           onChange={(e) => setProducer(e.target.value)} 
         />
       </div>
+      <div>
+        <label>Описание:</label> {/* New label for description */}
+        <textarea 
+          value={description} 
+          onChange={(e) => setDescription(e.target.value)} 
+        />
+      </div>
       <button type="submit">Создать</button>
     </form>
   );
 };
 
 export default CreateItem;
+
