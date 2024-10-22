@@ -5,6 +5,8 @@ import Link from "next/link";
 import Header from "./components/Header.jsx";
 import Intro from "./components/Intro.jsx";
 import Recomended from "./components/Recomended.jsx";
+import Form from "@components/Form";
+import { Provider } from "jotai";
 
 export default function RootLayout({
   children,
@@ -14,10 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="app">
-        <Header/>
-        <Intro/>
-        <Recomended/>
-        {children}
+        <Provider>
+          <Header />
+          <Intro />
+          <Recomended />
+          {children}
+          <Form withKitchen visible={false} />
+        </Provider>
       </body>
     </html>
   );
