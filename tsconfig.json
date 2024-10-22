@@ -12,13 +12,18 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./app*"],
+      "@styles/*": ["./app/styles/*"],
+      "@components/*": ["./app/components/*"],
+      "@images/*": ["./app/images/*"],
+      "@videos/*": ["./app/videos/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
