@@ -5,6 +5,8 @@ import Link from "next/link";
 import Header from "./components/Header.jsx";
 import Intro from "./components/Intro.jsx";
 import Recomended from "./components/Recomended.jsx";
+import Info from "./components/Info.jsx";
+import Testimonials from "./components/Testimonials.jsx";
 
 export default function RootLayout({
   children,
@@ -17,6 +19,8 @@ export default function RootLayout({
         <Header/>
         <Intro/>
         <Recomended/>
+        <Info/>
+        <Testimonials/>
         {children}
       </body>
     </html>

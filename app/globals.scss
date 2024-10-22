@@ -1,5 +1,19 @@
 @import "@styles/_variables.scss";
 
+*{
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+background: rgba($black, 90%);
+border-radius: 20px;
+}
+
 body{
   margin: 0;
   @include Montserrat-Medium;
@@ -168,7 +182,163 @@ h1,h2,h3,h4,h5,p{
       z-index: 10;
     }
   }
+}
 
+.info{
+  background-color: $black;
+  padding: 68px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 54px;
+  width: 100%;
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__header{
+    &-title{
+      @include Montserrat-Semibold;
+      font-size: 32px;
+      color: $white;
+      margin-bottom: 8px;
+    }
+    &-text{
+      @include Montserrat-Medium;
+      font-size: 16px;
+      color: rgba($white, 50%);
+    }
+    &-body{
+      @include Montserrat-Medium;
+      font-size: 16px;
+      color: rgba($white, 60%);
+      max-width: 40%;
+      font-size: 18px;
+    }
 
+    & a{
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+  &__video{
+    width: 80%;
+    height: fit-content;
+    aspect-ratio: 1130 / 535;
+    object-fit: cover;
+    margin-bottom: 60px;
+  }
+}
+
+.news{
+  width: 80%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.article{
+  flex-grow: 1;
+  width: 280px;
+  &-img{
+    @include image_container;
+    height: fit-content;
+    aspect-ratio: 555 / 300;
+    margin-bottom: 24px;
+    & img{
+      @include image;
+    }
+  }
+  &__body{
+    display: flex;
+    gap: 6px;
+    &-title{
+      flex-grow: 1;
+      font-size: 24px;
+      @include Montserrat-Medium;
+      color: $white;
+    }
+    &-date{
+      font-size: 16px;
+      @include Montserrat-Medium;
+      color: rgba($white, 40%);
+      width: fit-content;
+      margin-top: 4px;
+    }
+  }
+}
+
+.testiomonials{
+  max-width: 80%;
+  width: 100%;
+  &-button{
+    display: flex;
+    align-items: center;
+    gap: 10;
+    color: $black;
+    @include Montserrat-Semibold;
+  }
+  &__header{
+    margin-bottom: 42px;
+    &-title{
+      @include Montserrat-Semibold;
+      font-size: 32px;
+    }
+    &-text{
+      @include Montserrat-Medium;
+      font-size: 16px;
+      color: $gray;
+    }
+  }
+  &__content{
+    display: flex;
+    gap: 20px;
+  }
+  &__share{
+    flex-grow: 1;
+    width: 280px;
+    &-image{
+      width: 100%;
+      height: fit-content;
+      aspect-ratio: 555 / 180;
+      @include image_container;
+      & img{
+        @include image;
+      }
+    }
+    &-content{
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      & img{
+        width: 90px;
+        height: fit-content;
+        aspect-ratio: 1 / 1;
+        margin-top: -60px;
+        z-index: 1;
+      }
+    }
+    &-text{
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    &-title{
+      @include Montserrat-Semibold;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    &-body{
+      @include Montserrat-Medium;
+      font-size: 14px;
+      color: $gray;
+    }
+  }
+  &__list{
+    flex-grow: 1;
+    width: 280px;
+  }
 }
 
