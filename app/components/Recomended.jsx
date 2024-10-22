@@ -9,6 +9,7 @@ return <section className="recomended">
     <div className="recomended__list">
         <div className="recomended__item">
             <Image src={placeholder} alt="" />
+            <h3 className="recomended__item-name">Victoria</h3>
         </div>
     </div>
 
