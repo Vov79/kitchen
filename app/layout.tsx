@@ -4,6 +4,7 @@ import "./globals.scss";
 import Link from "next/link";
 import Header from "./components/Header.jsx";
 
+
 export default function RootLayout({
   children,
 }: Readonly<{

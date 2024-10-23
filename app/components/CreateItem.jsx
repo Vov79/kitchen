@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { db, storage } from '../lib/firebase'; 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { collection, addDoc } from 'firebase/firestore';
+import KitchenList from './KitchenList';
 
 const CreateItem = () => {
   const [title, setTitle] = useState('');
@@ -13,6 +14,7 @@ const CreateItem = () => {
   const [facades, setFacades] = useState('');
   const [blat, setBlat] = useState('');
   const [producer, setProducer] = useState('');
+  const [description, setDescription] = useState(''); 
   const [files, setFiles] = useState([]);
 
   const handleChangeFile = (event) => {
@@ -26,7 +28,8 @@ const CreateItem = () => {
       const imageUrls = [];
 
       for (const file of files) {
-        const storageRef = ref(storage, `images/${file.name}`);
+        const uniqueFileName = `${Date.now()}-${file.name}`;
+        const storageRef = ref(storage, `images/${uniqueFileName}`);
         await uploadBytes(storageRef, file);
 
         const downloadURL = await getDownloadURL(storageRef);
@@ -43,10 +46,10 @@ const CreateItem = () => {
         facades: facades || null,
         blat: blat || null,
         producer: producer || null,
+        description: description || null,
         createdAt: new Date(),
       });
 
-      // Сброс формы
       setTitle('');
       setPrice('');
       setLength('');
@@ -55,6 +58,7 @@ const CreateItem = () => {
       setFacades('');
       setBlat('');
       setProducer('');
+      setDescription('');
       setFiles([]);
       alert('Объект успешно добавлен!');
     } catch (error) {
@@ -64,6 +68,7 @@ const CreateItem = () => {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Название:</label>
@@ -138,9 +143,19 @@ const CreateItem = () => {
           onChange={(e) => setProducer(e.target.value)} 
         />
       </div>
+      <div>
+        <label>Описание:</label> {/* New label for description */}
+        <textarea 
+          value={description} 
+          onChange={(e) => setDescription(e.target.value)} 
+        />
+      </div>
       <button type="submit">Создать</button>
     </form>
+    <KitchenList/>
+    </>
   );
 };
 
 export default CreateItem;
+
