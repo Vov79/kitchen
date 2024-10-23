@@ -4,6 +4,10 @@ async function sumbitForm(data: FormData) {
   const tel = data.get("tel");
   const kitchen = data.get("kitchen");
 
+  if(!name || !tel ) {
+    return
+  }
+
   const botToken = process.env.BOT_TOKEN;
   const chatId = process.env.CHAT_ID;
 

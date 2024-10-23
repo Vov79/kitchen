@@ -1,0 +1,130 @@
+@media screen and (max-width: 1650px) {
+    .recomended, .testiomonials{
+        max-width: 90%;
+    }
+
+    .header__inner, .info__top{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .about{
+        padding-left: 24px;
+    }
+
+    .news, .info__video{
+        width: 90%;
+    }
+  }
+  
+
+  @media screen and (max-width: 1200px) {
+    .app{
+        gap: 48px;
+    }
+
+    .recomended, .testiomonials{
+        max-width: 100%;
+    }
+
+    .header__inner, .info__top, .recomended, .info__video, .news, .testiomonials, .footer__inner{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .about{
+        padding-left: 16px;
+    }
+
+    .news, .info__video{
+        width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .header__inner-navs, .header__inner-info{
+        display: none;
+    }
+
+    .app{
+        gap: 32px;
+    }
+
+    .info{
+        padding: 32px 0;
+        gap: 32px;
+    }
+
+    .about__content{
+        gap: 24px;
+    }
+
+    .about{
+        padding: 32px 16px;
+        gap: 32px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .info__video{
+        margin-bottom: 16px;
+    }
+
+    .recomended__header-title, .info__header-title, .testiomonials__header-title, .about__content-title{
+        font-size: 24px;
+    }
+
+    .recomended__list{
+        gap: 16px;
+    }
+
+    .recomended__item{
+        aspect-ratio: 16 / 12 !important;
+    }
+
+    .recomended__header{
+        margin-bottom: 24px;
+    }
+
+    .info__header-body{
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .recomended__item-name{
+        left: 16px;
+        bottom: 16px;
+        font-size: 24px;
+    }
+
+    .info__header-text{
+        @include Montserrat-Regular;
+    }
+
+    .header__inner-burger{
+        display: block;
+    }
+
+    .article__body{
+        flex-wrap: wrap;
+    }
+
+    .article__body-title{
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .testiomonials__share-content{
+        flex-wrap: wrap;
+    }
+
+    .testiomonials__share-text{
+        width: 100%;
+    }
+
+    .burger{
+        display: block;
+    }
+
+  }
+  
