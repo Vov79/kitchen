@@ -21,7 +21,6 @@ function Form({ withKitchen = false, children, buttonClassName = "" }: Props) {
     setShow((prevShow) => !prevShow);
   };
 
-  const hanndleSubmit = sumbitForm.bind(null, withKitchen);
   return (
     <>
       <button className={buttonClassName} onClick={togglePopup}>
@@ -33,7 +32,7 @@ function Form({ withKitchen = false, children, buttonClassName = "" }: Props) {
         onClick={hidePopup}
       >
         <form
-          action={hanndleSubmit}
+          action={sumbitForm}
           className={`form_popup-content`}
           onClick={(e) => e.stopPropagation()}
         >

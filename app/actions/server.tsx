@@ -1,7 +1,5 @@
 "use server";
-async function sumbitForm(withKitchen: boolean, data: FormData) {
-  "use server";
-
+async function sumbitForm(data: FormData) {
   const name = data.get("name");
   const tel = data.get("tel");
   const kitchen = data.get("kitchen");
@@ -11,15 +9,18 @@ async function sumbitForm(withKitchen: boolean, data: FormData) {
 
   let message = "";
 
-  if (withKitchen) {
+  if (kitchen) {
     message = `${name} a lasat un mesaj. Numarul:${tel}. Produsul dorit este: ${kitchen}`;
   } else {
     message = `${name} a lasat un mesaj. Numarul:${tel}`;
   }
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
-
-  await fetch(url);
+  try {
+    await fetch(url);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export { sumbitForm };
