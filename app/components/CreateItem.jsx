@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { db, storage } from '../lib/firebase'; 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { collection, addDoc } from 'firebase/firestore';
+import KitchenList from './KitchenList';
 
 const CreateItem = () => {
   const [title, setTitle] = useState('');
@@ -13,7 +14,7 @@ const CreateItem = () => {
   const [facades, setFacades] = useState('');
   const [blat, setBlat] = useState('');
   const [producer, setProducer] = useState('');
-  const [description, setDescription] = useState(''); // New state for description
+  const [description, setDescription] = useState(''); 
   const [files, setFiles] = useState([]);
 
   const handleChangeFile = (event) => {
@@ -27,7 +28,8 @@ const CreateItem = () => {
       const imageUrls = [];
 
       for (const file of files) {
-        const storageRef = ref(storage, `images/${file.name}`);
+        const uniqueFileName = `${Date.now()}-${file.name}`;
+        const storageRef = ref(storage, `images/${uniqueFileName}`);
         await uploadBytes(storageRef, file);
 
         const downloadURL = await getDownloadURL(storageRef);
@@ -44,11 +46,10 @@ const CreateItem = () => {
         facades: facades || null,
         blat: blat || null,
         producer: producer || null,
-        description: description || null, // Add description to the data
+        description: description || null,
         createdAt: new Date(),
       });
 
-      // Reset form
       setTitle('');
       setPrice('');
       setLength('');
@@ -57,7 +58,7 @@ const CreateItem = () => {
       setFacades('');
       setBlat('');
       setProducer('');
-      setDescription(''); // Reset description
+      setDescription('');
       setFiles([]);
       alert('Объект успешно добавлен!');
     } catch (error) {
@@ -67,6 +68,7 @@ const CreateItem = () => {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Название:</label>
@@ -150,6 +152,8 @@ const CreateItem = () => {
       </div>
       <button type="submit">Создать</button>
     </form>
+    <KitchenList/>
+    </>
   );
 };
 
