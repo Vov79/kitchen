@@ -3,15 +3,20 @@ import React, { useState } from "react";
 import { sumbitForm } from "../actions/server";
 import about from "@images/Rectangle 1294.png"
 import Image from "next/image"
+import { toast, Slide } from 'react-toastify';
+import { useRef } from 'react'
+
 
 interface Props {
   children: React.ReactNode;
   withKitchen: boolean;
   buttonClassName?: string; // For button styling
+  kitchenId?: string;
 }
 
-function Form({ withKitchen = false, children, buttonClassName = "" }: Props) {
+function Form({ withKitchen = false, children, buttonClassName = "", kitchenId }: Props) {
   const [show, setShow] = useState(false);
+  const ref = useRef<HTMLFormElement>(null)
 
   const hidePopup = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
@@ -34,19 +39,37 @@ function Form({ withKitchen = false, children, buttonClassName = "" }: Props) {
         onClick={hidePopup}
       >
         <form
-          action={sumbitForm}
+          ref={ref}
+        action={async (formData) => {
+        await sumbitForm(formData)
+        ref.current?.reset()
+      }}
           className={`form_popup-content`}
           onClick={(e) => e.stopPropagation()}
+          onSubmit={(e) =>{
+            setShow(!show)
+            toast.success('Mesajul a fost trimis!', {
+              position: "top-right",
+              autoClose: 1500,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Slide,
+              });
+          }}
         >
           <div className="form-image">
             <Image src={about} alt="Croitoru"/>
           </div>
           <div className="form-container">
             <p>COMPLETAZĂ FORMULARUL</p>
-            <input name="name" type="text" placeholder="Numele" />
-            <input name="tel" type="text" placeholder="Telfonul" />
+            <input required name="name" type="text" placeholder="Numele" />
+            <input required name="tel" type="text" placeholder="Telefonul" />
             {withKitchen && (
-              <input name="kitchen" type="text" placeholder="Bucatarie" />
+              <input style={{display: "none"}}  disabled value={kitchenId} name="kitchen" type="text" placeholder="Bucatarie" />
             )}
             <button type="submit">Trimite</button>
           </div>
