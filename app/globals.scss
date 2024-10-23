@@ -342,3 +342,49 @@ h1,h2,h3,h4,h5,p{
   }
 }
 
+.about{
+  background-color: $black;
+  padding: 68px 40px;
+  padding-right: 0;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+    &-logo{
+      width: 140px;
+      height: fit-content;
+    }
+    &-text{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    &-title{
+      @include Montserrat-Semibold;
+      font-size: 32px;
+      color: $white;
+      margin-bottom: 8px;
+    }
+    &-body{
+      @include Montserrat-Medium;
+      font-size: 16px;
+      color: rgba($white, 50%);
+      margin-bottom: 32px;
+    }
+  }
+  &__image{
+    width: 100%;
+    height: fit-content;
+    aspect-ratio: 825 / 480;
+    max-height: 700px;
+    @include image_container;
+    & img{
+      @include image;
+    }
+  }
+}
+
