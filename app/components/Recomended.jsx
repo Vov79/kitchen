@@ -32,13 +32,13 @@ return <section className="recomended">
         <p className="recomended__header-text">Deja peste 2000 de bucătării finisate au fost livrate și instalate în casele clienților noștri și în continuare menținem relații bune.</p>
     </div>
     <div className="recomended__list">
-    {kitchens.map(kitchen => (
+    {kitchens.filter(kitchen => kitchen.favourite).map(kitchen => (
                     <div className="recomended__item" key={kitchen.id}>
                         <Image
-                            src={kitchen.imageUrls[0]}
+                            src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
                             alt={kitchen.title}
-                            width={500} 
-                            height={300}
+                            width={1400} 
+                            height={500}
                         />
                         <h3 className="recomended__item-name">{kitchen.title}</h3>
                     </div>
