@@ -1,6 +1,6 @@
 import placeholder from "@images/Img-15.jpg"
 import Image from "next/image"
-export default function Info() {
+export default function Recomended() {
 return <section className="recomended">
     <div className="recomended__header">
         <h2 className="recomended__header-title">PROIECTELE NOASTRE</h2>
