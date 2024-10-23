@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { sumbitForm } from "../actions/server";
+import about from "@images/Rectangle 1294.png"
+import Image from "next/image"
 
 interface Props {
   children: React.ReactNode;
@@ -36,12 +38,19 @@ function Form({ withKitchen = false, children, buttonClassName = "" }: Props) {
           className={`form_popup-content`}
           onClick={(e) => e.stopPropagation()}
         >
-          <input name="name" type="text" placeholder="Nume" />
-          <input name="tel" type="text" placeholder="Numar" />
-          {withKitchen && (
-            <input name="kitchen" type="text" placeholder="Bucatarie" />
-          )}
-          <button type="submit">Trimite</button>
+          <div className="form-image">
+            <Image src={about} alt="Croitoru"/>
+          </div>
+          <div className="form-container">
+            <p>COMPLETAZĂ FORMULARUL</p>
+            <input name="name" type="text" placeholder="Numele" />
+            <input name="tel" type="text" placeholder="Telfonul" />
+            {withKitchen && (
+              <input name="kitchen" type="text" placeholder="Bucatarie" />
+            )}
+            <button type="submit">Trimite</button>
+          </div>
+          
         </form>
       </div>
     </>
