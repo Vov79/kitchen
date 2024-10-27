@@ -2,6 +2,7 @@
 import logo from "@images/Croitoru_Logo.svg"
 import Image from "next/image"
 import { useState } from "react"
+import Link from 'next/link'
 
 
 export default function Header() {
@@ -14,16 +15,16 @@ export default function Header() {
 
 return <header className="header">
     <div className="header__inner">
-        <a href="">
+        <Link href="/">
             <Image className="header__inner-logo" src={logo} alt="" srcset="" />
-        </a>
+        </Link>
         <div className="header__inner-navs">
-            <a className="header__inner-link" href="">Acasă</a>
-            <a className="header__inner-link" href="">Bucătării</a>
-            <a className="header__inner-link" href="">Showroom-uri</a>
+            <Link className="header__inner-link" href="/">Acasă</Link>
+            <a className="header__inner-link" href="/bucatarii">Bucătării</a>
+            <a className="header__inner-link" href="/showrooms">Showroom-uri</a>
         </div>
         <div className="header__inner-info">
-            <a className="header__inner-link" href="">+373 61 03 97 97</a>
+            <Link className="header__inner-link" href="tel:37361039797">+373 61 03 97 97</Link>
             <div className="header__inner-links">
                 <a href="">
                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +59,7 @@ return <header className="header">
         <a className="menu-link" href="">Showroom-uri</a>
         </div>
         <div className="header__inner-info visible">
-            <a className="header__inner-link" href="">+373 61 03 97 97</a>
+            <Link className="header__inner-link" href="tel: +37361039797">+373 61 03 97 97</Link>
             <div className="header__inner-links">
                 <a href="">
                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,7 @@
 import CreateItem from '../../components/CreateItem';
 
 
-export default function Product() {
+export default function Showrooms() {
     return(
         <div>
             <h1>Product Page</h1>
