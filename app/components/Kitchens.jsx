@@ -34,7 +34,7 @@ return <section className="kitchens">
     </div>
     <div className="kitchens__list">
     {kitchens.map(kitchen => (
-                    <Link href="/preview" className="kitchens__item" key={kitchen.id}>
+                    <Link href={`/preview/${kitchen.id}`} className="kitchens__item" key={kitchen.id}>
                         <Image
                             src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
                             alt={kitchen.title}
