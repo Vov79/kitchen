@@ -1,130 +1,160 @@
 @media screen and (max-width: 1650px) {
-    .recomended, .testiomonials{
+    .recomended,
+    .testiomonials {
         max-width: 90%;
     }
-
-    .header__inner, .info__top{
+    .header__inner,
+    .info__top,
+    .preview__images,
+    .preview__head,
+    .preview__main,
+    .preview__info,
+    .kitchens__list.featured {
         padding-left: 24px;
         padding-right: 24px;
     }
-
-    .about{
+    .about {
         padding-left: 24px;
     }
-
-    .news, .info__video{
+    .news,
+    .info__video {
         width: 90%;
     }
-  }
-  
+}
 
-  @media screen and (max-width: 1200px) {
-    .app{
+@media screen and (max-width: 1200px) {
+    .app {
         gap: 48px;
     }
-
-    .recomended, .testiomonials{
+    .recomended,
+    .testiomonials {
         max-width: 100%;
     }
-
-    .header__inner, .info__top, .recomended, .info__video, .news, .testiomonials, .footer__inner{
+    .header__inner,
+    .info__top,
+    .recomended,
+    .info__video,
+    .news,
+    .testiomonials,
+    .footer__inner,
+    .kitchens,
+    .preview__images,
+    .preview__head,
+    .preview__main,
+    .preview__info,
+    .kitchens__list.featured {
         padding-left: 16px;
         padding-right: 16px;
     }
-
-    .about{
+    .about {
         padding-left: 16px;
     }
-
-    .news, .info__video{
+    .news,
+    .info__video {
         width: 100%;
     }
-  }
+}
 
-  @media screen and (max-width: 750px) {
-    .header__inner-navs, .header__inner-info{
+@media screen and (max-width: 750px) {
+    .header__inner-navs,
+    .header__inner-info {
         display: none;
     }
-
-    .app{
+    .app {
         gap: 32px;
     }
-
-    .info{
+    .info {
         padding: 32px 0;
         gap: 32px;
     }
-
-    .about__content{
+    .about__content {
         gap: 24px;
     }
-
-    .about{
+    .about {
         padding: 32px 16px;
         gap: 32px;
         display: flex;
         flex-direction: column-reverse;
     }
-
-    .info__video{
+    .info__video {
         margin-bottom: 16px;
     }
-
-    .recomended__header-title, .info__header-title, .testiomonials__header-title, .about__content-title{
+    .recomended__header-title,
+    .info__header-title,
+    .testiomonials__header-title,
+    .about__content-title {
         font-size: 24px;
     }
-
-    .recomended__list{
+    .recomended__list {
         gap: 16px;
     }
-
-    .recomended__item{
+    .recomended__item {
         aspect-ratio: 16 / 12 !important;
     }
-
-    .recomended__header{
+    .kitchens__item {
+        width: 100%;
+        aspect-ratio: 16 / 10 !important;
+    }
+    .recomended__header {
         margin-bottom: 24px;
     }
-
-    .info__header-body{
+    .info__header-body {
         max-width: 100%;
         font-size: 14px;
     }
-
-    .recomended__item-name{
+    .recomended__item-name,
+    .kitchens__item-name {
         left: 16px;
         bottom: 16px;
         font-size: 24px;
     }
-
-    .info__header-text{
+    .info__header-text {
         @include Montserrat-Regular;
     }
-
-    .header__inner-burger{
+    .header__inner-burger {
         display: block;
     }
-
-    .article__body{
+    .article__body {
         flex-wrap: wrap;
     }
-
-    .article__body-title{
+    .article__body-title {
         font-size: 18px;
         width: 100%;
     }
-
-    .testiomonials__share-content{
+    .testiomonials__share-content {
         flex-wrap: wrap;
     }
-
-    .testiomonials__share-text{
+    .testiomonials__share-text {
         width: 100%;
     }
-
-    .burger{
+    .burger {
         display: block;
     }
-
-  }
-  
+    .preview__images-item {
+        display: none;
+    }
+    .preview__images-item.item_1 {
+        display: block;
+        grid-area: 1 / 1 / 3 / 5;
+    }
+    .preview__images {
+        aspect-ratio: 16 / 10;
+    }
+    .preview__main {
+        flex-wrap: wrap;
+    }
+    .preview__main-container {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .preview__info-content {
+        flex-wrap: wrap;
+    }
+    .preview__info-title {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .preview__info-item {
+        width: 45%;
+    }
+}
