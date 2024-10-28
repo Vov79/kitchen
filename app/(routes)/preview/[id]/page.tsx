@@ -105,14 +105,14 @@ export default function Preview({ params }: { params: { id: string } }) {
                                 <p className="preview__info-body">{kitchen?.facades}</p>
                             </div>
                             <div className="preview__info-item">
-                                <h3 className="preview__info-label">PRODUCATOR</h3>
-                                <p className="preview__info-body">{kitchen?.producer}</p>
-                            </div>
-                            <div className="preview__info-item">
                                 <h3 className="preview__info-label">BLAT</h3>
                                 <p className="preview__info-body">{kitchen?.blat}</p>
                             </div>
-                            
+                            <div className="preview__info-item">
+                                <h3 className="preview__info-label">PRODUCATOR</h3>
+                                <p className="preview__info-body">{kitchen?.producer}</p>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
