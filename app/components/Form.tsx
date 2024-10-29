@@ -11,6 +11,7 @@ interface Props {
   withKitchen: boolean;
   buttonClassName?: string; // For button styling
   kitchenId?: string;
+  kitchenImage?: string;
 }
 
 function Form({
@@ -18,6 +19,7 @@ function Form({
   children,
   buttonClassName = "",
   kitchenId,
+  kitchenImage,
 }: Props) {
   const [show, setShow] = useState(false);
   const ref = useRef<HTMLFormElement>(null);
@@ -66,10 +68,23 @@ function Form({
           }}
         >
           <div className="form-image">
-            <Image src={about} alt="Croitoru" />
+            {withKitchen ? (
+              <Image
+                alt={kitchenId as string}
+                src={kitchenImage as string}
+                width={500}
+                height={500}
+              />
+            ) : (
+              <Image alt={kitchenId as string} src={about} />
+            )}
           </div>
           <div className="form-container">
-            <p>COMPLETAZĂ FORMULARUL</p>
+            {withKitchen ? (
+              <p>Bucătăria {kitchenId}</p>
+            ) : (
+              <p>Completează formularul</p>
+            )}
             <input required name="name" type="text" placeholder="Numele" />
             <input required name="tel" type="text" placeholder="Telefonul" />
             {withKitchen && (
