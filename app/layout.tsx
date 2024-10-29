@@ -4,9 +4,8 @@ import "./globals.scss";
 import Link from "next/link";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function RootLayout({
   children,
@@ -14,11 +13,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="ro
+    "
+    >
+      <head>
+        <link rel="icon" href="/images/favicon.ico" sizes="any" />
+      </head>
       <body>
-      <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
         <ToastContainer />
       </body>
     </html>
