@@ -1,10 +1,14 @@
-import CreateItem from '../../components/CreateItem';
+import About from '@//components/About';
+import Showrooms from '@//components/Showrooms';
+import Pages_Intro from '@//components/Pages_Intro';
 
 
-export default function Showrooms() {
+export default function Showroom() {
     return(
         <div>
-            <h1>Product Page</h1>
+            <Pages_Intro/>
+            <Showrooms/>
+            <About/>
         </div>
     );
 }

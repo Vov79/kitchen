@@ -21,7 +21,7 @@ return <header className="header">
         <div className="header__inner-navs">
             <Link className="header__inner-link" href="/">Acasă</Link>
             <a className="header__inner-link" href="/bucatarii">Bucătării</a>
-            <a className="header__inner-link">Showroom-uri</a>
+            <a className="header__inner-link" href="/showrooms">Showroom-uri</a>
         </div>
         <div className="header__inner-info">
             <Link className="header__inner-link" href="tel:37361039797">+373 61 03 97 97</Link>
