@@ -9,7 +9,8 @@
     .preview__head,
     .preview__main,
     .preview__info,
-    .kitchens__list.featured {
+    .kitchens__list.featured,
+    .showroom {
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -46,12 +47,22 @@
         padding-left: 16px;
         padding-right: 16px;
     }
+    .showroom {
+        padding: 32px 16px;
+    }
     .about {
         padding-left: 16px;
     }
     .news,
     .info__video {
         width: 100%;
+    }
+    .showroom__content,
+    .showroom__image {
+        width: 100%;
+    }
+    .showroom__inner {
+        flex-direction: column-reverse;
     }
 }
 
@@ -156,5 +167,17 @@
     }
     .preview__info-item {
         width: 45%;
+    }
+    .showroom {
+        gap: 24px;
+    }
+    .showroom-title {
+        font-size: 24px;
+    }
+    .showroom__content {
+        gap: 24px;
+    }
+    .showroom__contact {
+        width: 100%;
     }
 }

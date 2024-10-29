@@ -116,7 +116,7 @@ export default function Preview({ params }: { params: { id: string } }) {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div style={{width: 100 + '%'}}>
                 <Featured/>
                 <About/>
                 </div>

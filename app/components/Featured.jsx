@@ -44,14 +44,7 @@ return <section className="info">
                     </Link>
                 ))}
     </div>
-    <div className="info__top">
-        <div className="info__header">
-            <h2 className="info__header-title">BUCĂTĂRII СROITORU</h2>
-            <p className="info__header-text">Din 2016</p>
-        </div>
-        <p className="info__header-body">Atelier de bucătării la comandă, produse după tehnologie și standarte Italiene. Orice dimensiune și design, în doar 20 zile cu livrare  absol gratuita. Design Italian. Bucataria ta este aici.</p>
-    </div>
-    <video className="info__video" autoPlay muted loop src="videos/Bucatarii_Background.mp4"></video>
+    
 </section>
 
 }

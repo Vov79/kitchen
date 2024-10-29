@@ -5,6 +5,7 @@
 
 .form_popup {
     z-index: 100;
+    padding: 16px;
     top: 0;
     left: 0;
     position: fixed;
@@ -599,6 +600,99 @@ p {
         width: 100%;
         height: fit-content;
         aspect-ratio: 825 / 480;
+        max-height: 700px;
+        @include image_container;
+        & img {
+            @include image;
+        }
+    }
+}
+
+.showroom {
+    background-color: $black;
+    padding: 68px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    width: 100%;
+    &__contact {
+        flex-grow: 1;
+        &.link {
+            width: fit-content;
+            flex-grow: 0;
+        }
+        flex-grow: 1;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        &-title {
+            @include Montserrat-Semibold;
+            color: $white;
+        }
+        &-text {
+            color: $gray;
+            text-decoration: none;
+            &.link {
+                display: flex;
+                align-items: center;
+                color: $white;
+                @include Montserrat-Light;
+            }
+        }
+        &-links {
+            display: flex;
+            gap: 10px;
+        }
+    }
+    &-title {
+        font-size: 32px;
+        @include Montserrat-Medium;
+        color: $white;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 42px;
+        flex-grow: 1;
+        width: 280px;
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        &-title {
+            @include Montserrat-Semibold;
+            font-size: 32px;
+            color: $white;
+            margin-bottom: 8px;
+        }
+        &-body {
+            @include Montserrat-Medium;
+            font-size: 16px;
+            color: rgba($white, 50%);
+            margin-bottom: 32px;
+        }
+    }
+    &__image {
+        border-radius: 4px;
+        width: 280px;
+        flex-grow: 1;
+        height: fit-content;
+        aspect-ratio: 540 / 300;
         max-height: 700px;
         @include image_container;
         & img {
