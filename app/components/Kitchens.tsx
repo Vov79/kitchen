@@ -4,28 +4,13 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { db } from "../lib/firebase"; 
 import { collection, getDocs } from "firebase/firestore";
+import { Kitchen } from "../types/Kitchen";
 import Link from "next/link";
-
-export default function Recomended() {
-    const [kitchens, setKitchens] = useState([]);
-
-    useEffect(() => {
-        const fetchKitchens = async () => {
-            try {
-                const kitchensCollection = collection(db, "kitchen");
-                const kitchensSnapshot = await getDocs(kitchensCollection);
-                const kitchensList = kitchensSnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setKitchens(kitchensList);
-            } catch (error) {
-                console.error("Ошибка при загрузке данных:", error);
-            }
-        };
-
-        fetchKitchens();
-    }, []);
+interface RecomendedProps {
+    kitchens: Kitchen[];
+  }
+export default function Recomended({ kitchens }: RecomendedProps) {
+    
 
 return <section className="kitchens">
     <div className="recomended__header">
@@ -34,7 +19,7 @@ return <section className="kitchens">
     </div>
     <div className="kitchens__list">
     {kitchens.map(kitchen => (
-                    <Link href={`/preview/${kitchen.id}`} className="kitchens__item" key={kitchen.id}>
+                    <Link href={`/preview/${kitchen.title}?id=${kitchen.id}`} className="kitchens__item" key={kitchen.id}>
                         <Image
                             src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
                             alt={kitchen.title}
