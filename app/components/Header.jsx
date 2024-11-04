@@ -27,7 +27,6 @@ export default function Header() {
           <Link className="header__inner-link" href="/showrooms">
             Showroom-uri
           </Link>
-
         </div>
         <div className="header__inner-info">
           <Link className="header__inner-link" href="tel:37361039797">

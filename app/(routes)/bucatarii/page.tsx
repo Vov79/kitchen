@@ -1,7 +1,7 @@
 import About from "@//components/About";
 import Kitchens from "@//components/Kitchens";
 import Pages_Intro from "@//components/Pages_Intro";
-import { getKitchensData } from "@//actions/get_kitchens";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,12 +20,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Bucatarii() {
-  const { kitchens } = await getKitchensData(); 
+export default function Bucatarii() {
   return (
     <div className="app">
       <Pages_Intro />
-      <Kitchens kitchens={kitchens}/>
+      <Kitchens />
       <About />
     </div>
   );
