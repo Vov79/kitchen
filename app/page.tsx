@@ -1,14 +1,10 @@
 import Intro from "./components/Intro.jsx";
-import Recomended from "./components/Recomended";
+import Recomended from "./components/Recomended.jsx";
 import Info from "./components/Info.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import About from "./components/About.jsx";
-import { db } from "@//lib/firebase"; 
-import { collection, getDocs } from "firebase/firestore"; 
-import type { Metadata } from "next";
-import type { Kitchen } from "@//types/Kitchen";
-import { getKitchensData } from "./actions/get_kitchens";
 
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Croitoru | Acasă",
@@ -26,12 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {  
-  const { kitchens } = await getKitchensData(); 
+export default function Home() {
   return (
     <div className="app">
       <Intro />
-      <Recomended kitchens={kitchens} />
+      <Recomended />
       <Info />
       <Testimonials />
       <About />
