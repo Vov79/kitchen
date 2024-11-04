@@ -1,55 +1,18 @@
-'use client'
 import About from '@//components/About';
 import Featured from '@//components/Featured';
 import Form from '@//components/Form';
 import placeholder from "@images/Img-15.jpg"
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { db } from "@//lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import { getKitchensData } from '@//actions/get_kitchen'; 
+import type { Kitchen } from '@//types/Kitchen';
 
-interface KitchenData {
-    title: string;
-    description: string;
-    price: number;
-    length: number;
-    width: number;
-    height: number;
-    imageUrls: string[];
-    facades: string;
-    displayCases: string;
-    countertop: string;
-    moldings: string;
-    underRoller: string;
-    fittings: string;
-    blat: string;
-    producer: string;
-}
 
-export default function Preview({ params }: { params: { id: string } }) {
-    const [kitchen, setKitchen] = useState<KitchenData | null>(null);
-    const [loading, setLoading] = useState(true);
+export default async function Preview({ params }: { params: { id: string } }) {
 
-    useEffect(() => {
-        const fetchKitchenData = async () => {
-            try {
-                const kitchenDoc = doc(db, "kitchen", params.id);
-                const kitchenSnap = await getDoc(kitchenDoc);
+    const kitchen: Kitchen | null = await getKitchensData(params.id);
 
-                if (kitchenSnap.exists()) {
-                    setKitchen(kitchenSnap.data() as KitchenData);
-                } else {
-                    console.error("Кухня не найдена");
-                }
-            } catch (error) {
-                console.error("Ошибка при загрузке данных о кухне:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchKitchenData();
-    }, [params.id]);
     return(
         
         <div>
