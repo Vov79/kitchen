@@ -33,6 +33,7 @@
         aspect-ratio: 100 / 50;
         @include image_container;
         & img {
+            width: 100% !important;
             @include image;
         }
     }
@@ -223,7 +224,7 @@ p {
             gap: 16px;
             align-items: center;
             & a {
-                height: 18px;
+                height: 24px;
             }
         }
     }
@@ -285,6 +286,9 @@ p {
         outline: none;
         border: 0;
         cursor: pointer;
+        &.contact {
+            color: $black;
+        }
     }
 }
 
@@ -471,6 +475,7 @@ p {
     }
     &__body {
         display: flex;
+        flex-direction: column;
         gap: 6px;
         &-title {
             flex-grow: 1;

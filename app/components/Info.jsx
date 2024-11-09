@@ -7,26 +7,23 @@ export default function Recomended() {
       <div className="info__top">
         <div className="info__header">
           <h2 className="info__header-title">BUCĂTĂRII СROITORU</h2>
-          <p className="info__header-text">Din 2016</p>
+          <p className="info__header-text">Din 2015</p>
         </div>
         <p className="info__header-body">
           Atelier de bucătării la comandă, produse după tehnologie și standarte
-          Italiene. Orice dimensiune și design, în doar 20 zile cu livrare absol
-          gratuita. Design Italian. Bucataria ta este aici.
+          Italiene. Orice dimensiune și design, în doar 30 zile.
         </p>
       </div>
       <video
         className="info__video"
-        autoPlay
-        muted
-        loop
-        src="videos/Bucatarii_Background.mp4"
+        controls
+        src="videos/video_add.mp4"
       ></video>
       <div className="info__top">
         <div className="info__header">
           <h2 className="info__header-title">NOUTĂȚI</h2>
           <p className="info__header-text">
-            Pentru cele mai noi noutați, urmăriți-ne în <a href="">Instagram</a>
+            Pentru cele mai noi noutați, urmăriți-ne în <a href="https://www.instagram.com/bucatarii_croitoru/" target="_blank">Instagram</a>
           </p>
         </div>
       </div>
@@ -41,10 +38,9 @@ export default function Recomended() {
           </div>
           <div className="article__body">
             <h3 className="article__body-title">
-              Un design curajos și elegant pentru creatorii de gusturi
-              sofisticate.
+            Ce modele de mobilă de bucătărie sã alegi pentru casã sau apartament?
             </h3>
-            <p className="article__body-date">09.05</p>
+            <p className="article__body-date">Nu o să ne temem să spunem că o familie fericită trebuie sã aibă în primul rând o bucătãrie frumoasã si bine amenajată.</p>
           </div>
         </div>
         <div className="article">
@@ -53,9 +49,10 @@ export default function Recomended() {
           </div>
           <div className="article__body">
             <h3 className="article__body-title">
-              Plăcerea de a găti începe aici!
+            Cum să-fi completezi bucătãria? Recomandari in alegerea instalafilor sanitare
             </h3>
-            <p className="article__body-date">09.05</p>
+            <p className="article__body-date">Bucătäria este una din cele mai exploatate si complexe
+            incaperi din fiecare locuinta.</p>
           </div>
         </div>
       </div>

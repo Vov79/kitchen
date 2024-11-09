@@ -1,13 +1,14 @@
-import placeholder from "@images/image 15.png";
+import placeholder from "@images/Img-225.jpg";
 import logo from "@images/Frame 1000001357.png";
 import Image from "next/image";
+import Form from "./Form";
 export default function Testimonials() {
   return (
     <section className="testiomonials">
       <div className="testiomonials__header">
         <h2 className="testiomonials__header-title">RĂMÂI CONECTAT</h2>
         <p className="testiomonials__header-text">
-          Deja peste 2000 de bucătării finisate au fost livrate și instalate în
+          Deja peste 5000 de bucătării finisate au fost livrate și instalate în
           casele clienților noștri și în continuare menținem relații bune.
         </p>
       </div>
@@ -24,9 +25,9 @@ export default function Testimonials() {
                 11K aprecieri • 12K urmăritori
               </p>
             </div>
-            <div className="testiomonials-button">
-              DISTRIBUIE
-              <svg
+            <Form buttonClassName="intro-button contact">
+            CONSULTAȚIE GRATUITĂ
+            <svg
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -40,7 +41,7 @@ export default function Testimonials() {
                   fill="#1B2221"
                 />
               </svg>
-            </div>
+        </Form>
           </div>
         </div>
       </div>
