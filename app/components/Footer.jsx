@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="footer__contact-item">
             <h4 className="footer__contact-title">ORAR DE MUNCĂ</h4>
             <p className="footer__contact-text">Luni - Vineri: 9:00 - 18:00</p>
-            <p className="footer__contact-text">Sâmbătă: 9:00 - 15:00</p>
+            <p className="footer__contact-text">Sâmbătă: 10:00 - 15:00</p>
             <p className="footer__contact-text">Duminică: Zi liberă</p>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="footer__contact-item">
             <h4 className="footer__contact-title">URMĂREȘTE-NE</h4>
             <div className="footer__contact-links">
-              <a className="footer__contact-text" href="">
+              <a className="footer__contact-text" href="https://www.facebook.com/bucatariicroitoru/" target="_blank">
                 <svg
                   width="134"
                   height="44"
@@ -75,7 +75,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a className="footer__contact-text" href="">
+              <a className="footer__contact-text" href="https://www.instagram.com/bucatarii_croitoru/" target="_blank">
                 <svg
                   width="138"
                   height="44"

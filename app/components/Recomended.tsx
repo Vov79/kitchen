@@ -15,7 +15,7 @@ export default function Recomended({ kitchens }: RecomendedProps) {
       <div className="recomended__header">
         <h2 className="recomended__header-title">PROIECTELE NOASTRE</h2>
         <p className="recomended__header-text">
-          Deja peste 2000 de bucătării finisate au fost livrate și instalate în
+          Deja peste 5000 de bucătării finisate au fost livrate și instalate în
           casele clienților noștri și în continuare menținem relații bune.
         </p>
       </div>

@@ -1,6 +1,7 @@
 import logo from "@images/Croitoru_Logo.svg";
-import about from "@images/Rectangle 1294.png";
+import about from "@images/about.jpg";
 import Image from "next/image";
+import Form from "./Form";
 import Link from "next/link";
 export default function About() {
   return (
@@ -12,11 +13,11 @@ export default function About() {
             DESCOPERĂ CELE MAI BUNE BUCĂTĂRII DIN MOLDOVA
           </h3>
           <p className="about__content-body">
-            Deja peste 2000 de bucătării finisate au fost livrate și instalate
+            Deja peste 5000 de bucătării finisate au fost livrate și instalate
             în casele clienților noștri și în continuare menținem relații bune.
           </p>
-          <Link href="bucatarii" className="intro-button">
-            VEZI TOATE PRODUSELE
+          <Form buttonClassName="intro-button">
+            CONSULTAȚIE GRATUITĂ
             <svg
               width="24"
               height="25"
@@ -31,7 +32,7 @@ export default function About() {
                 fill="white"
               />
             </svg>
-          </Link>
+          </Form>
         </div>
       </div>
       <div className="about__image">
