@@ -1,24 +1,27 @@
 "use server";
 import { db } from "../lib/firebase"; 
 import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import type { Kitchen } from "@//types/Kitchen";
 
-export const getKitchensData = async (id: string): Promise<Kitchen | null> => {
+export const getKitchensData = async (title: string): Promise<Kitchen | null> => {
   try {
-    const kitchenDoc = doc(db, "kitchen", id); 
-    const kitchenSnapshot = await getDoc(kitchenDoc);
+    const kitchensCollection = collection(db, "kitchen");
+    const kitchensQuery = query(kitchensCollection, where("title", "==", title));
+    const querySnapshot = await getDocs(kitchensQuery);
 
-    if (kitchenSnapshot.exists()) {
+    if (!querySnapshot.empty) {
+      const kitchenDoc = querySnapshot.docs[0];
       return {
-        id: kitchenSnapshot.id,
-        ...kitchenSnapshot.data(),
+        id: kitchenDoc.id,
+        ...kitchenDoc.data(),
       } as Kitchen;
     } else {
-      console.error("Кухня не найдена");
-      return null; 
+      console.error("Error");
+      return null;
     }
   } catch (error) {
-    console.error("Ошибка при загрузке данных:", error);
-    return null; 
+    console.error("Error:", error);
+    return null;
   }
 };
