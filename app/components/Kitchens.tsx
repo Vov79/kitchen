@@ -10,7 +10,7 @@ interface RecomendedProps {
     kitchens: Kitchen[];
   }
 export default function Recomended({ kitchens }: RecomendedProps) {
-    
+    const[f, setf] = useState(0);
 
 return <section className="kitchens">
     <div className="recomended__header">
@@ -19,7 +19,7 @@ return <section className="kitchens">
     </div>
     <div className="kitchens__list">
     {kitchens.map(kitchen => (
-                    <Link href={`/preview/${kitchen.title}?id=${kitchen.id}`} className="kitchens__item" key={kitchen.id}>
+                    <Link href={`/preview/${kitchen.title}`} className="kitchens__item" key={kitchen.title}>
                         <Image
                             src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
                             alt={kitchen.title}

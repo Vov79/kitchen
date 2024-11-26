@@ -1,3 +1,4 @@
+'use client';
 import About from '@//components/About';
 import Featured from '@//components/Featured';
 import Form from '@//components/Form';
@@ -7,14 +8,17 @@ import { db } from "@//lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { getKitchensData } from '@//actions/get_kitchen'; 
 import type { Kitchen } from '@//types/Kitchen';
+import ImageSlider from '@//components/ImageSlider'; // Импортируем компонент
 
 
-export default async function Preview({ params }: { params: { id: string } }) {
-
-    const kitchen: Kitchen | null = await getKitchensData(params.id);
-
-    return (
+export default async function Preview({ params }: { params: { title: string } }) {
+ 
+    const kitchen: Kitchen | null = await getKitchensData(params.title);
+    
+    return (  
+      
         <div>
+
           <div className="preview__head">
             <h1 className="preview__head-title">{kitchen?.title}</h1>
             <Form
@@ -41,6 +45,8 @@ export default async function Preview({ params }: { params: { id: string } }) {
             </Form>
           </div>
           <div className="app preview">
+          {kitchen?.imageUrls && <ImageSlider images={kitchen.imageUrls} />}
+
             <div className="preview__images">
               {kitchen?.imageUrls.map((url, index) => (
                 <div
@@ -58,27 +64,7 @@ export default async function Preview({ params }: { params: { id: string } }) {
               ))}
             </div>
             <div className="preview__main">
-                
-              {/* <div className="preview__main-container">
-                <div className="preview__main-item">
-                  <h3 className="preview__main-title">PREȚ</h3>
-                  <p className="preview__main-body">{kitchen?.price} MDL</p>
-                </div>
-              </div> */}
-              {/* <div className="preview__main-container">
-                <div className="preview__main-item">
-                  <h3 className="preview__main-title">Lungime</h3>
-                  <p className="preview__main-body">{kitchen?.length}</p>
-                </div>
-                <div className="preview__main-item">
-                  <h3 className="preview__main-title">Lățime</h3>
-                  <p className="preview__main-body">{kitchen?.width}</p>
-                </div>
-                <div className="preview__main-item">
-                  <h3 className="preview__main-title">Înălține</h3>
-                  <p className="preview__main-body">{kitchen?.height}</p>
-                </div>
-              </div> */}
+              
             </div>
             <div className="preview__info">
               <div className="preview__info-content">

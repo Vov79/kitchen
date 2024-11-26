@@ -24,7 +24,7 @@ export default function Recomended({ kitchens }: RecomendedProps) {
   .filter((kitchen) => kitchen.favourite)
   .map((kitchen) => (
     <div className="recomended__item" key={kitchen.id}>
-      <Link href={`/preview/${kitchen.id}`} key={kitchen.id}>
+      <Link href={`/preview/${kitchen.title}`} key={kitchen.title}>
         <Image
           src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
           alt={kitchen.title}
