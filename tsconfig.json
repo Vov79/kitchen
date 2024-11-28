@@ -27,6 +27,6 @@
       "@actions/*": ["./app/actions/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(routes)/preview/[id]/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(routes)/preview/[title]/page.tsx"],
   "exclude": ["node_modules"]
 }

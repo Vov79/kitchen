@@ -33,7 +33,7 @@ return <section className="info">
     </div>
     <div className="kitchens__list featured">
     {kitchens.slice(0, 2).map(kitchen => (
-                    <Link href={`/preview/${kitchen.id}`} className="kitchens__item">
+                    <Link href={`/preview/${kitchen.title}`} className="kitchens__item">
                         <Image
                             src={kitchen.imageUrls[kitchen.imageUrls.length - 1]}
                             alt={kitchen.title}
