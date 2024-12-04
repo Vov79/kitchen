@@ -43,7 +43,7 @@ const styles = {
   heading: {
     fontSize: "3rem",
     marginBottom: "1rem",
-    marginTop: "70px",
+    marginTop: "75px",
   },
   message: {
     fontSize: "1.2rem",
