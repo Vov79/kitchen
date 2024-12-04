@@ -57,7 +57,7 @@ function Form({
           onClick={(e) => e.stopPropagation()}
           onSubmit={(e) => {
             setShow(!show);
-            router.push('/thank_you');
+            router.push('/thank-you');
           }}
         >
           <div className="form-image">

@@ -13,9 +13,9 @@ export default async function  ThankYouPage (){
   return (
     <>
     <div style={styles.container}>
-      <h1 style={styles.heading}>Multumesc!</h1>
+      <h1 style={styles.heading}>Multumim!</h1>
       <p style={styles.message}>
-       Apreciem vizita dumneavoastră. Dacă aveți întrebări, nu ezitați să contactați!
+        În scurt timp unul din consultanții noștri vor reveni cu un apel.
       </p>
     </div>
     <div className="app">
@@ -33,19 +33,21 @@ const styles = {
     flexDirection: "column" as const,
     justifyContent: "center",
     alignItems: "center",
-    height: "80vh",
+    height: "40vh",
     textAlign: "center" as const,
     backgroundColor: "#f9f9f9",
     color: "#333",
-    marginBottom: "40px"
+    marginBottom: "30px",
+    marginTop: "20px"
   },
   heading: {
     fontSize: "3rem",
     marginBottom: "1rem",
+    marginTop: "70px",
   },
   message: {
     fontSize: "1.2rem",
-    maxWidth: "600px",
+    maxWidth: "650px",
     lineHeight: "1.5",
   },
 };
