@@ -21,17 +21,15 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/images/favicon.ico" sizes="any" />
-       
-       
       </head>
       <body>
-        
 
         <Header />
         {children}
         <Footer />
         <ToastContainer />
         <GoogleAnalytics gaId="GTM-N86LVST" />
+        
       </body>
     </html>
   );

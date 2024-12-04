@@ -1,4 +1,7 @@
+"use client"
 import React, { useState } from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ImageSlider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,18 +19,16 @@ const ImageSlider = ({ images }) => {
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="preview__images-slider">
-      <img
-        className="preview__images-image-slider"
-        src={images[currentIndex]}
-        alt={`Image ${currentIndex + 1}`}
-      />
-      <button className="prev-arrow-slider" onClick={goToPrevious}>
-        &#10094;
-      </button>
-      <button className="next-arrow-slider" onClick={goToNext}>
-        &#10095;
-      </button>
+    <div className="view_slider">
+      <PhotoProvider>
+        <div className="view-image_slider">
+  {images.map((item, index) => (
+    <PhotoView key={index} src={item}>
+      {index < 5 ? <div className={`preview__images-item item_${index + 1}`}><img  src={item} alt="" /></div> : undefined}
+    </PhotoView>
+  ))}
+  </div>
+  </PhotoProvider>
     </div>
   );
 };
