@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { sumbitForm } from "../actions/server";
 import about from "@images/Rectangle 1294.png";
 import Image from "next/image";
-import { toast, Slide } from "react-toastify";
 import { useRef } from "react";
+import { useRouter } from 'next/navigation'
+
 
 interface Props {
   children: React.ReactNode;
@@ -23,11 +24,12 @@ function Form({
 }: Props) {
   const [show, setShow] = useState(false);
   const ref = useRef<HTMLFormElement>(null);
+  const router = useRouter();
 
   const hidePopup = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
       setShow(false);
-    }
+      }
   };
 
   const togglePopup = () => {
@@ -36,6 +38,7 @@ function Form({
 
   return (
     <>
+
       <button className={buttonClassName} onClick={togglePopup}>
         {children}
       </button>
@@ -54,17 +57,7 @@ function Form({
           onClick={(e) => e.stopPropagation()}
           onSubmit={(e) => {
             setShow(!show);
-            toast.success("Mesajul a fost trimis!", {
-              position: "top-right",
-              autoClose: 1500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-              transition: Slide,
-            });
+            router.push('/thank_you');
           }}
         >
           <div className="form-image">

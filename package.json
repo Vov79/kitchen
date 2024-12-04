@@ -9,12 +9,15 @@
         "export": "next build && next export"
     },
     "dependencies": {
+        "@google-analytics/data": "^4.11.0",
+        "@next/third-parties": "^15.0.3",
         "firebase": "^11.0.0",
         "mongodb": "^6.9.0",
         "next": "^14.2.14",
         "normalize-scss": "^8.0.0",
         "react": "^18",
         "react-dom": "^18",
+        "react-photo-view": "^1.2.6",
         "react-toastify": "^10.0.6",
         "sass": "^1.80.3",
         "sharp": "^0.33.5"

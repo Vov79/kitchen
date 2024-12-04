@@ -1,4 +1,3 @@
-'use client';
 import About from '@//components/About';
 import Featured from '@//components/Featured';
 import Form from '@//components/Form';
@@ -8,8 +7,8 @@ import { db } from "@//lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { getKitchensData } from '@//actions/get_kitchen'; 
 import type { Kitchen } from '@//types/Kitchen';
-import ImageSlider from '@//components/ImageSlider'; // Импортируем компонент
-
+import ImageSlider from '@//components/ImageSlider';
+import { useRouter } from 'next/navigation';
 
 export default async function Preview({ params }: { params: { title: string } }) {
  
@@ -45,7 +44,6 @@ export default async function Preview({ params }: { params: { title: string } })
             </Form>
           </div>
           <div className="app preview">
-          {kitchen?.imageUrls && <ImageSlider images={kitchen.imageUrls} />}
 
             <div className="preview__images">
               {kitchen?.imageUrls.map((url, index) => (
