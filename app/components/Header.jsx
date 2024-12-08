@@ -24,6 +24,9 @@ export default function Header() {
           <Link className="header__inner-link" href="/bucatarii">
             Bucătării
           </Link>
+          <Link className="header__inner-link" href="/franke">
+            Franke
+          </Link>
           <Link className="header__inner-link" href="/showrooms">
             Showroom-uri
           </Link>
