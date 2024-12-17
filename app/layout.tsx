@@ -7,7 +7,8 @@ import Footer from "./components/Footer.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Script from "next/script";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -26,6 +27,7 @@ export default function RootLayout({
 
         <Header />
         {children}
+        <Analytics />
         <Footer />
         <ToastContainer />
         <GoogleTagManager gtmId="GTM-N86LVST" />
