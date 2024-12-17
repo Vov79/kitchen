@@ -7,7 +7,7 @@ import Footer from "./components/Footer.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Script from "next/script";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function RootLayout({
   children,
@@ -28,7 +28,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <ToastContainer />
-        <GoogleAnalytics gaId="GTM-N86LVST" />
+        <GoogleTagManager gtmId="GTM-N86LVST" />
         
       </body>
     </html>

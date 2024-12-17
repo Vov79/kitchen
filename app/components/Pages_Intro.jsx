@@ -1,4 +1,4 @@
-import cover from "@images/Rectangle 1296.png"
+import cover from "@images/about.jpg"
 import Image from "next/image"
 import Form from "./Form"
 export default function Pages_Intro() {
