@@ -6,6 +6,7 @@ import Info from "@//components/Info.jsx";
 import Testimonials from "@//components/Testimonials";
 import React from "react";
 import About from "@//components/About.jsx";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export default async function  ThankYouPage (){
     const { kitchens } = await getKitchensData(); 
@@ -22,6 +23,7 @@ export default async function  ThankYouPage (){
       <Recomended kitchens={kitchens} />
       <Testimonials />
       <About />
+      <GoogleTagManager gtmId="GTM-N86LVST" />
     </div>
     </>
   );
