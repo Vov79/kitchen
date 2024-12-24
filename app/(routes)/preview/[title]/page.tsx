@@ -44,7 +44,7 @@ export default async function Preview({ params }: { params: { title: string } })
             </Form>
           </div>
           <div className="app preview">
-
+          <ImageSlider></ImageSlider>
             <div className="preview__images">
               {kitchen?.imageUrls.map((url, index) => (
                 <div
