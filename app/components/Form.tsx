@@ -57,6 +57,10 @@ function Form({
           onClick={(e) => e.stopPropagation()}
           onSubmit={(e) => {
             setShow(!show);
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+          event: 'thank-you_page'
+          });
             router.push('/thank-you');
           }}
         >
