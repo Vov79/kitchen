@@ -5,7 +5,7 @@ import Form from "./Form"
 export default function Intro() {
 return <section className="intro">
     <Image className="intro__video" src={cover} alt="" srcset="" />
-<video className="intro__video" style="display: none" muted loop src="videos/Bucatarii_Background.mp4"></video>
+<video className="intro__video video_none" muted loop src="videos/Bucatarii_Background.mp4"></video>
     <div className="intro-content">
         <Image className="intro-logo" src={logo} alt="" srcset="" />
         <Form buttonClassName="preview-form">
