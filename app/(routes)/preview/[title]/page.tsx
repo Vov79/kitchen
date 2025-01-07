@@ -44,25 +44,8 @@ export default async function Preview({ params }: { params: { title: string } })
             </Form>
           </div>
           <div className="app preview">
-            <div className="preview__images">
-              {kitchen?.imageUrls.map((url, index) => (
-                <div
-                  className={`preview__images-item item_${index + 1}`}
-                  key={index}
-                >
-                  <Image
-                    className="preview__images-image"
-                    src={url || placeholder}
-                    alt={kitchen.title}
-                    width={1400}
-                    height={500}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="preview__main">
-              
-            </div>
+
+          <ImageSlider images={kitchen?.imageUrls}/>
             <div className="preview__info">
               <div className="preview__info-content">
                 <h3 className="preview__info-title">DESCRIERE</h3>

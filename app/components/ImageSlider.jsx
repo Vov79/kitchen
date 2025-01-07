@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import Image from 'next/image';
 
 const ImageSlider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,17 +20,27 @@ const ImageSlider = ({ images }) => {
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="view_slider">
-      <PhotoProvider>
-        <div className="view-image_slider">
-  {images.map((item, index) => (
-    <PhotoView key={index} src={item}>
-      {index < 5 ? <div className={`preview__images-item item_${index + 1}`}><img  src={item} alt="" /></div> : undefined}
-    </PhotoView>
-  ))}
+    
+
+<div className="preview__images">
+<PhotoProvider>
+{images.map((url, index) => (
+  <PhotoView key={index} src={url}>
+  <div
+    className={`preview__images-item item_${index + 1}`}
+    key={index}
+  >
+    <Image
+      className="preview__images-image"
+      src={url || placeholder}
+      width={1400}
+      height={500}
+    />
   </div>
-  </PhotoProvider>
-    </div>
+  </PhotoView>
+))}
+      </PhotoProvider>
+</div>
   );
 };
 
