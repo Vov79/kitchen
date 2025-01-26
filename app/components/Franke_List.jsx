@@ -17,6 +17,8 @@ export default function Franke_List() {
         Fiecare dintre produsele noastre este proiectat pentru a fi excelent în sine și de neegalat la nivel de performanță și stil.
         </p>
       </div>
+      <iframe src="pdf/Franke_PDF.pdf" className="franke_pdf" frameborder="0"></iframe>
+      {/* 
       <div className="franke__list">
         <div className="franke__item">
             <h2 className="franke__item-title">Chiuvete</h2>
@@ -55,6 +57,7 @@ export default function Franke_List() {
 
         </div>
         </div>
+        */}
 </section>
     )
 }

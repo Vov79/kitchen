@@ -977,6 +977,16 @@ p {
 }
 
 .franke {
+    &_pdf {
+        max-width: 1200px;
+        width: 100%;
+        aspect-ratio: 20 / 25;
+        max-height: 80vh;
+        margin: 0 auto;
+        border-radius: 4px;
+        border: 1px solid #EEE;
+        display: block;
+    }
     &__intro {
         max-width: 1440px;
         margin-top: 50px;
